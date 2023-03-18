@@ -8,5 +8,5 @@ export interface TimeObject {
     minutes: number;
     seconds: number;
 }
-declare function useBlockCountdownTimer({ blocks, network }: Props): TimeObject;
-export default useBlockCountdownTimer;
+declare function useBlockCountdown({ blocks, network }: Props): TimeObject;
+export default useBlockCountdown;

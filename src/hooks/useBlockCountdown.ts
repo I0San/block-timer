@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
 
-interface Props {
-  blocks: number;
-  network: string
-}
-
 export interface TimeObject {
   days: number;
   hours: number;
@@ -16,30 +11,37 @@ export interface TimeObject {
  * Average block time in seconds
  */
 const BlockTimes: Record<string, number> = {
-  "Bitcoin": 600000,
-  "Ethereum": 15000,
-  "Binance Smart Chain": 3000,
-  "Cardano": 20000,
-  "Solana": 8000,
-  "Polygon": 2000,
-  "Dogecoin": 60000,
-  "Bitcoin Testnet": 600000,
-  "Binance Smart Chain Testnet": 3000,
-  "Cardano Testnet": 20000,
-  "Polygon Mumbai": 5000,
-  "Fantom": 1000,
-  "Harmony": 8000,
-  "Avalanche": 5000,
-  "Avalanche Testnet": 5000,
-  "Arbitrum": 5000,
-  "Arbitrum Testnet": 5000,
-  "Optimism": 15000,
-  "Optimism Testnet": 15000,
-  "Goerli": 15000,
+  "bitcoin": 600000,
+  "ethereum": 15000,
+  "goerli": 15000,
+  "polygon": 2000,
+  "mumbai": 5000,
+  "bsc": 3000,
+  "bsc-testnet": 3000,
+  "cardano": 20000,
+  "cardano-testnet": 20000,
+  "solana": 8000,
+  "dogecoin": 60000,
+  "fantom": 1000,
+  "harmony": 8000,
+  "avalanche": 5000,
+  "avalanche-testnet": 5000,
+  "arbitrum": 5000,
+  "arbitrum-testnet": 5000,
+  "optimism": 15000,
+  "optimism-testnet": 15000,
   // add more blockchain networks and their average block times as needed
 }
 
-function useBlockCountdownTimer({ blocks, network }: Props) {
+/**
+ * Usage
+ * const { days, hours, minutes, seconds } = useBlockCountdown(100, "bitcoin")
+ * 
+ * @param blocks 
+ * @param network 
+ * @returns { days, hours, minutes, seconds }: TimeObject
+ */
+function useBlockCountdown(blocks: number, network: string): TimeObject {
   const [timeRemaining, setTimeRemaining] = useState<number>(0);
 
   function tick(timespan: number) {
@@ -70,4 +72,4 @@ function useBlockCountdownTimer({ blocks, network }: Props) {
   return formatTime(timeRemaining);
 }
 
-export default useBlockCountdownTimer;
+export default useBlockCountdown;

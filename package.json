@@ -12,7 +12,6 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "author": "I0San",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
