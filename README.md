@@ -16,6 +16,7 @@ npm install @i0san/block-timer
 import { useBlockCountdown } from "@i0san/block-timer";
 
 function MyApp() {
+  // Set target date 100 blocks ahead from now (Bitcoin network)
   const { days, hours, minutes, seconds } = useBlockCountdown(100, "bitcoin");
   return (
     <>
