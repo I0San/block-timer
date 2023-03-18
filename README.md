@@ -4,6 +4,8 @@ A multichain counter. A React component library.
 
 V1 - Counts down to a future time defined in number of blocks on a specific Blockchain network.
 
+[Demo](https://codesandbox.io/s/i0san-block-timer-zjqvjg)
+
 ## Install
 
 ```bash
