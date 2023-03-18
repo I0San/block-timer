@@ -53,5 +53,9 @@ function MyApp() {
 // add more blockchain networks and their average block times as needed
 ```
 
+## Planned features
+- find a free API to fetch current average block time for a specific network
+- add "startBlock" param
+
 ## Reference
 [The complete guide to publish React hook as NPM package](https://igorluczko.medium.com/the-complete-guide-to-publish-react-hook-as-npm-package-880049829e89)
