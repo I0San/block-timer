@@ -56,6 +56,9 @@ function MyApp() {
 ## Planned features
 - find a free API to fetch current average block time for a specific network
 - add "startBlock" param
+- add "endBlock" param
+- add "startTimestamp" param
+- add "endTimestamp" param
 
 ## Reference
 [The complete guide to publish React hook as NPM package](https://igorluczko.medium.com/the-complete-guide-to-publish-react-hook-as-npm-package-880049829e89)
