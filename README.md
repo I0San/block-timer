@@ -8,8 +8,6 @@ V1 - Counts down to a future time defined in number of blocks on a specific Bloc
 
 ```bash
 npm install @i0san/block-timer
-or
-yarn add @i0san/block-timer
 ```
 
 ## Usage
@@ -18,10 +16,7 @@ yarn add @i0san/block-timer
 import { useBlockCountdown } from "@i0san/block-timer";
 
 function MyApp() {
-  const { days, hours, minutes, seconds } = useBlockCountdown(
-    100,
-    "bitcoin"
-  );
+  const { days, hours, minutes, seconds } = useBlockCountdown(100, "bitcoin");
   return (
     <>
       {days}days {hours}hours {minutes}minutes {seconds}seconds
@@ -54,3 +49,6 @@ function MyApp() {
 "optimism-testnet"
 // add more blockchain networks and their average block times as needed
 ```
+
+## Reference
+[The complete guide to publish React hook as NPM package](https://igorluczko.medium.com/the-complete-guide-to-publish-react-hook-as-npm-package-880049829e89)

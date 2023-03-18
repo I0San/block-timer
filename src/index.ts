@@ -1,1 +1,1 @@
-export * from "./hooks/useBlockCountdown";
+export { useBlockCountdown } from './hooks/useBlockCountdown';

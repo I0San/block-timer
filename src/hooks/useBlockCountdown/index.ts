@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export interface TimeObject {
+interface TimeObject {
   days: number;
   hours: number;
   minutes: number;
@@ -41,7 +41,7 @@ const BlockTimes: Record<string, number> = {
  * @param network 
  * @returns { days, hours, minutes, seconds }: TimeObject
  */
-function useBlockCountdown(blocks: number, network: string): TimeObject {
+export const useBlockCountdown = (blocks: number, network: string): TimeObject => {
   const [timeRemaining, setTimeRemaining] = useState<number>(0);
 
   function tick(timespan: number) {
@@ -70,6 +70,4 @@ function useBlockCountdown(blocks: number, network: string): TimeObject {
   };
 
   return formatTime(timeRemaining);
-}
-
-export default useBlockCountdown;
+};
