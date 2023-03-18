@@ -49,7 +49,7 @@ function useBlockCountdownTimer({ blocks, network }: Props) {
   }
 
   useEffect(() => {
-    const BLOCK_TIME = BlockTimes[network]; // TODO - Check for chain connected and get current average block time
+    const BLOCK_TIME = BlockTimes[network]; // TODO - Find a free api and get current average block time for the chain
     const timespan = blocks * BLOCK_TIME + Date.now();
     tick(timespan);
     const intervalId = setInterval(() => {
