@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 interface Props {
   blocks: number;
+  network: string
 }
 
 export interface TimeObject {
@@ -11,7 +12,34 @@ export interface TimeObject {
   seconds: number;
 }
 
-function useBlockCountdownTimer({ blocks }: Props) {
+/**
+ * Average block time in seconds
+ */
+const BlockTimes: Record<string, number> = {
+  "Bitcoin": 600000,
+  "Ethereum": 15000,
+  "Binance Smart Chain": 3000,
+  "Cardano": 20000,
+  "Solana": 8000,
+  "Polygon": 2000,
+  "Dogecoin": 60000,
+  "Bitcoin Testnet": 600000,
+  "Binance Smart Chain Testnet": 3000,
+  "Cardano Testnet": 20000,
+  "Polygon Mumbai": 5000,
+  "Fantom": 1000,
+  "Harmony": 8000,
+  "Avalanche": 5000,
+  "Avalanche Testnet": 5000,
+  "Arbitrum": 5000,
+  "Arbitrum Testnet": 5000,
+  "Optimism": 15000,
+  "Optimism Testnet": 15000,
+  "Goerli": 15000,
+  // add more blockchain networks and their average block times as needed
+}
+
+function useBlockCountdownTimer({ blocks, network }: Props) {
   const [timeRemaining, setTimeRemaining] = useState<number>(0);
 
   function tick(timespan: number) {
@@ -21,7 +49,7 @@ function useBlockCountdownTimer({ blocks }: Props) {
   }
 
   useEffect(() => {
-    const BLOCK_TIME = 60000; // TODO - Check for chain connected and get block time
+    const BLOCK_TIME = BlockTimes[network]; // TODO - Check for chain connected and get current average block time
     const timespan = blocks * BLOCK_TIME + Date.now();
     tick(timespan);
     const intervalId = setInterval(() => {
